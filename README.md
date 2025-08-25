@@ -1,2 +1,3 @@
 # Hybrid-European Dictonary
-the complete dictonary of the Made up language of Hybrid-European
+The official complete dictonary for the constructed language: Hybrid-European
+Mix of german polish italian
