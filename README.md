@@ -5,3 +5,5 @@ https://cramangako.github.io/dictionary/
 
 Website by cramangako and losercites (Realyby)
 Language by cramangako losercites (Realyby) and codsquad101
+
+For Questions PM cramangako or losercites (Realyby)
