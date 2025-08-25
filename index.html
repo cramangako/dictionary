@@ -40,6 +40,37 @@
     .empty {
       color: #aaa;
     }
+    .region {
+      margin-top: 32px;
+      padding: 16px;
+      background: #f0f0f8;
+      border-radius: 6px;
+      border: 1px solid #e0e0ea;
+    }
+    .region-title {
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #333;
+      font-size: 17px;
+      text-align: center;
+    }
+    .suffix-list {
+      padding-left: 0;
+      list-style: none;
+      margin-top: 10px;
+    }
+    .suffix-list li {
+      margin-bottom: 6px;
+      color: #444;
+    }
+    .suffix-name {
+      font-weight: bold;
+      color: #222;
+    }
+    .suffix-meaning {
+      color: #555;
+      margin-left: 8px;
+    }
   </style>
 </head>
 <body>
@@ -47,12 +78,23 @@
   <input id="search" type="text" placeholder="Search word..." autocomplete="off">
   <ul id="word-list"></ul>
 
+  <div class="region">
+    <div class="region-title">Suffix Region</div>
+    <ul class="suffix-list">
+      <li>
+        <span class="suffix-name">-bad</span>
+        <span class="suffix-meaning">means: person; broadly entity or object</span>
+      </li>
+      <!-- Add more suffixes here as needed -->
+    </ul>
+  </div>
+
   <script>
     const WORDS = [
       { word: "halle", meaning: "bad, trash" },
       { word: "schwimm", meaning: "middle, neuter, ok" },
-      { word: "frei", meaning: "good, great, top" }
-      { word: "umgebung", meaning: "stupid, unintelligible," }
+      { word: "frei", meaning: "good, great, top" },
+      { word: "umgebung", meaning: "stupid, unintelligible" }
     ];
 
     const wordList = document.getElementById("word-list");
@@ -84,5 +126,4 @@
     renderWords();
   </script>
 </body>
-</html>
 </html>
