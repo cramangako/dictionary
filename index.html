@@ -1,11 +1,87 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Hello GitHub Pages</title>
-  </head>
-  <body style="font-family: Arial; text-align: center; margin-top: 50px;">
-    <h1>Hello, World!</h1>
-    <p>This site is hosted on <strong>GitHub Pages</strong>.</p>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hybrid-European Dictionary</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #fafafa;
+      max-width: 400px;
+      margin: 40px auto;
+      padding: 20px;
+      border: 1px solid #eee;
+      border-radius: 8px;
+    }
+    h2 {
+      text-align: center;
+    }
+    #search {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 16px;
+      border-radius: 4px;
+      border: 1px solid #ddd;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      margin-bottom: 12px;
+      padding: 8px 0;
+      border-bottom: 1px solid #eee;
+    }
+    .meaning {
+      color: #555;
+    }
+    .empty {
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <h2>Dictionary</h2>
+  <input id="search" type="text" placeholder="Search word..." autocomplete="off">
+  <ul id="word-list"></ul>
+
+  <script>
+    const WORDS = [
+      { word: "halle", meaning: "bad, trash" },
+      { word: "schwimm", meaning: "middle, neuter, ok" },
+      { word: "frei", meaning: "good, great, top" }
+    ];
+
+    const wordList = document.getElementById("word-list");
+    const searchInput = document.getElementById("search");
+
+    function renderWords(filter = "") {
+      wordList.innerHTML = "";
+      const filtered = WORDS.filter(({ word }) =>
+        word.toLowerCase().includes(filter.toLowerCase())
+      );
+      if (filtered.length === 0) {
+        const li = document.createElement("li");
+        li.className = "empty";
+        li.textContent = "No word found.";
+        wordList.appendChild(li);
+        return;
+      }
+      filtered.forEach(({ word, meaning }) => {
+        const li = document.createElement("li");
+        li.innerHTML = `<strong>${word}</strong><br><span class="meaning">${meaning}</span>`;
+        wordList.appendChild(li);
+      });
+    }
+
+    searchInput.addEventListener("input", (e) => {
+      renderWords(e.target.value);
+    });
+
+    renderWords();
+  </script>
+</body>
+</html>
 </html>
